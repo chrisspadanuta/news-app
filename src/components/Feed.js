@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-import { getNews } from '../service/news';
+import { getNews, getNewsForGroup } from '../service/news';
 import Article from './Article';
 
 export default class Feed extends React.Component {
@@ -20,7 +20,7 @@ export default class Feed extends React.Component {
   }
 
   fetchNews() {
-    getNews().then(articles => {
+    getNewsForGroup(this.props.feed).then(articles => {
       this.setState({ articles, refreshing: false })
     }).catch(() => {
       this.setState({ refreshing: false })
