@@ -51,7 +51,7 @@ const styles = {
     margin: 5,
     fontStyle: 'italic',
     color: '#222222',
-    fontSize: 12
+    fontSize: 14
   },
   featuredTitleStyle: {
     marginHorizontal: 5,

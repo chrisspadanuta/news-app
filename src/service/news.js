@@ -1,6 +1,6 @@
 const apiKey = '592852cd79fb4a8a867862084f7bb533';
 //const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
-const url = `https://newsapi.org/v2/everything?domains=nintendolife.com&apiKey=${apiKey}`;
+const url = `https://newsapi.org/v2/everything?domains=gothamist.com&apiKey=${apiKey}`;
 
 const everythingUrl = 'https://newsapi.org/v2/everything';
 
