@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import { getNews, getNewsForGroup } from '../service/news';
 import Article from './Article';
+import defaultScreen from '../styles/GlobalStyles'
 
 export default class Feed extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ export default class Feed extends React.Component {
       <FlatList
         data={this.state.articles}
         renderItem={({ item }) => <Article article={item} />}
-        keyExtractor={item => item.url}
+        keyExtractor={item => `${item.url}${item.index}`}
         refreshing={this.state.refreshing}
         onRefresh={this.handleRefresh}
       />

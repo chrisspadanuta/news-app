@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { Button, Divider } from 'react-native-elements';
 
+import { defaultScreen, buildNavigationOptions } from '../styles/GlobalStyles'
+
 const defaultNewsFeeds = [
   { id: 1, name: 'Real News', domains: ['gothamist.com', 'nytimes.com', 'npr.org']},
   { id: 2, name: 'Gaming', domains: ['kotaku.com', 'nintendolife.com', 'pcgamer.com', 'polygon.com', 'rockpapershotgun.com'] },
@@ -28,9 +30,8 @@ export default class HomeScreen extends React.Component {
   
   render() {
     return (
-      <View style={styles.main}>
-        <Text style={styles.headline}>Home Screen</Text>
-        <View style={styles.buttonList} >
+      <View style={defaultScreen.main}>
+        <View style={defaultScreen.buttonList} >
           <Button
             title="Setup"
             onPress={() => {
@@ -63,26 +64,8 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = {
-  main: {
-    backgroundColor: "#000000",
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  headline: {
-    color: "#999",
-    fontSize: 18
-  },
-  buttonList: {
-    flex: 1,
-    justifyContent: 'space-around'
-  },
   button: {
-    backgroundColor: "rgba(92, 99, 216, 1)",
-    width: 300,
-    height: 45,
-    borderColor: "transparent",
-    borderWidth: 0,
-    borderRadius: 5
+    ...defaultScreen.button,
+    backgroundColor: "rgba(92, 99, 216, 1)"
   }
 };

@@ -20,5 +20,7 @@ export async function getNews() {
 export async function getNewsForGroup(group) {
   const url = getApiUrl() + parameterizeDomains(group.domains);
   const result = await fetch(url).then(response => response.json());
-  return result.articles;
+  return result.articles.map((article, index) => {
+    return {...article, index};
+  });
 }
